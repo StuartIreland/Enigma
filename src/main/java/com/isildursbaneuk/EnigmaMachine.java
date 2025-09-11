@@ -59,7 +59,7 @@ public class EnigmaMachine {
         for (int i = 0; i < messageToEncrypt.length(); i++) {
 
             // Get the first letter of the string we have to encrypt
-            String nextLetter = String.valueOf(messageToEncrypt.charAt(i)); // A // A
+            String nextLetter = String.valueOf(messageToEncrypt.charAt(i));
 
             // Run that letter through the plugboard
             if (plugboardSettingsMap.containsKey(nextLetter)) {
@@ -101,7 +101,7 @@ public class EnigmaMachine {
     }
 
     private String dealWithRightHandRotor(String nextLetter, boolean reflected) {
-        Rotor rightRotor = getRotorsInUse().get(2); // A // E
+        Rotor rightRotor = getRotorsInUse().get(2);
 
         // Advance right rotor one place every time
         int oldRightRotorSetPoint = rightRotor.getSetPoint();
@@ -115,15 +115,15 @@ public class EnigmaMachine {
         int newRightRotorSetPoint = rightRotor.getSetPoint();
 
         RotorHelper rh = new RotorHelper();
-        String newLetter = rh.getLetterXStepsAhead(nextLetter, newRightRotorSetPoint); // B // F
+        String newLetter = rh.getLetterXStepsAhead(nextLetter, newRightRotorSetPoint);
 
         if (reflected) {
-            nextLetter = rightRotor.getLetterBackward(newLetter); // C
+            nextLetter = rightRotor.getLetterBackward(newLetter);
         } else {
-            nextLetter = rightRotor.getLetter(newLetter); // D
+            nextLetter = rightRotor.getLetter(newLetter);
         }
 
-        return rh.getLetterXStepsAhead(nextLetter,-newRightRotorSetPoint); // C // B
+        return rh.getLetterXStepsAhead(nextLetter,-newRightRotorSetPoint);
     }
 
     private String dealWithMiddleRotor(String nextLetter, boolean reflected) {
@@ -139,15 +139,15 @@ public class EnigmaMachine {
         int newMiddleRotorSetPoint = middleRotor.getSetPoint();
 
         RotorHelper rh = new RotorHelper();
-        String newLetter = rh.getLetterXStepsAhead(nextLetter, newMiddleRotorSetPoint); // C // S
+        String newLetter = rh.getLetterXStepsAhead(nextLetter, newMiddleRotorSetPoint);
 
         if (reflected) {
-            nextLetter = middleRotor.getLetterBackward(newLetter); // E
+            nextLetter = middleRotor.getLetterBackward(newLetter);
         } else {
-            nextLetter = middleRotor.getLetter(newLetter); // D
+            nextLetter = middleRotor.getLetter(newLetter);
         }
 
-        return rh.getLetterXStepsAhead(nextLetter,-newMiddleRotorSetPoint); // D
+        return rh.getLetterXStepsAhead(nextLetter,-newMiddleRotorSetPoint);
     }
 
     private String dealWithLeftHandRotor(String nextLetter, boolean reflected) {
@@ -163,22 +163,22 @@ public class EnigmaMachine {
         int newLeftRotorSetPoint = leftRotor.getSetPoint();
 
         RotorHelper rh = new RotorHelper();
-        String newLetter = rh.getLetterXStepsAhead(nextLetter, newLeftRotorSetPoint); // D // S
+        String newLetter = rh.getLetterXStepsAhead(nextLetter, newLeftRotorSetPoint);
 
         if (reflected) {
-            nextLetter = leftRotor.getLetterBackward(newLetter); // S // S
+            nextLetter = leftRotor.getLetterBackward(newLetter);
         } else {
-            nextLetter = leftRotor.getLetter(newLetter); // F
+            nextLetter = leftRotor.getLetter(newLetter);
         }
 
-        return rh.getLetterXStepsAhead(nextLetter,-newLeftRotorSetPoint); // F
+        return rh.getLetterXStepsAhead(nextLetter,-newLeftRotorSetPoint);
     }
 
     private String dealWithReflector(String nextLetter) {
 
-        nextLetter = reflector.getLetter(nextLetter); // F
+        nextLetter = reflector.getLetter(nextLetter);
 
-        return nextLetter; // F
+        return nextLetter;
     }
 
     public Map<String, String> getPlugboardSettingsMap() {
