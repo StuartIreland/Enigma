@@ -118,6 +118,82 @@ public class RotorFactory {
         return new Rotor(rotorWiring, stepPoint, setPoint);
     }
 
+    public static Rotor createRotorIV() {
+
+        Map<String, String> rotorWiring = new LinkedHashMap<>();
+
+        rotorWiring.put("A", "E");
+        rotorWiring.put("B", "S");
+        rotorWiring.put("C", "O");
+        rotorWiring.put("D", "V");
+        rotorWiring.put("E", "P");
+        rotorWiring.put("F", "Z");
+        rotorWiring.put("G", "J");
+        rotorWiring.put("H", "A");
+        rotorWiring.put("I", "Y");
+        rotorWiring.put("J", "Q");
+        rotorWiring.put("K", "U");
+        rotorWiring.put("L", "I");
+        rotorWiring.put("M", "R");
+        rotorWiring.put("N", "H");
+        rotorWiring.put("O", "X");
+        rotorWiring.put("P", "L");
+        rotorWiring.put("Q", "N");
+        rotorWiring.put("R", "F");
+        rotorWiring.put("S", "T");
+        rotorWiring.put("T", "G");
+        rotorWiring.put("U", "K");
+        rotorWiring.put("V", "D");
+        rotorWiring.put("W", "C");
+        rotorWiring.put("X", "M");
+        rotorWiring.put("Y", "W");
+        rotorWiring.put("Z", "B");
+
+        int stepPoint = 11;
+
+        int setPoint = 0;
+
+        return new Rotor(rotorWiring, stepPoint, setPoint);
+    }
+
+    public static Rotor createRotorV() {
+
+        Map<String, String> rotorWiring = new LinkedHashMap<>();
+
+        rotorWiring.put("A", "V");
+        rotorWiring.put("B", "Z");
+        rotorWiring.put("C", "B");
+        rotorWiring.put("D", "R");
+        rotorWiring.put("E", "G");
+        rotorWiring.put("F", "I");
+        rotorWiring.put("G", "T");
+        rotorWiring.put("H", "Y");
+        rotorWiring.put("I", "U");
+        rotorWiring.put("J", "P");
+        rotorWiring.put("K", "S");
+        rotorWiring.put("L", "D");
+        rotorWiring.put("M", "N");
+        rotorWiring.put("N", "H");
+        rotorWiring.put("O", "L");
+        rotorWiring.put("P", "X");
+        rotorWiring.put("Q", "A");
+        rotorWiring.put("R", "W");
+        rotorWiring.put("S", "M");
+        rotorWiring.put("T", "J");
+        rotorWiring.put("U", "Q");
+        rotorWiring.put("V", "O");
+        rotorWiring.put("W", "F");
+        rotorWiring.put("X", "E");
+        rotorWiring.put("Y", "C");
+        rotorWiring.put("Z", "K");
+
+        int stepPoint = 27;
+
+        int setPoint = 0;
+
+        return new Rotor(rotorWiring, stepPoint, setPoint);
+    }
+
     public static Rotor createReflectorA() {
 
         Map<String, String> rotorWiring = new LinkedHashMap<>();

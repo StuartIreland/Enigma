@@ -796,4 +796,88 @@ public class EnigmaTest {
         assertEquals(23, rotorIII.getStepPoint());
     }
 
+    @Test
+    public void testEnigmaPlugboardAndRotorOneTwoFourAndReflectorBHelloWorldEncryption() {
+
+        EnigmaMachine em = new EnigmaMachine();
+        em.addToPlugboardSettingsMap("A", "Q");
+        em.addToPlugboardSettingsMap("B", "S");
+        em.addToPlugboardSettingsMap("C", "G");
+        em.addToPlugboardSettingsMap("D", "T");
+        em.addToPlugboardSettingsMap("E", "J");
+        em.addToPlugboardSettingsMap("K", "W");
+        em.addToPlugboardSettingsMap("M", "N");
+        em.addToPlugboardSettingsMap("O", "P");
+        em.addToPlugboardSettingsMap("R", "Y");
+        em.addToPlugboardSettingsMap("X", "U");
+
+        em.getRotorsInUse().add(em.getRotorI());
+        em.getRotorsInUse().add(em.getRotorII());
+        em.getRotorsInUse().add(em.getRotorIV());
+
+        em.setInitialRotorPosition(0, 0);
+        em.setInitialRotorPosition(0, 1);
+        em.setInitialRotorPosition(0, 2);
+
+        em.setReflector(em.getReflectorB());
+
+        assertEquals("SNHBTXEDEZ", em.typeMessage("HELLOWORLD"));
+    }
+
+    @Test
+    public void testEnigmaPlugboardAndRotorOneTwoFiveAndReflectorBHelloWorldEncryption() {
+
+        EnigmaMachine em = new EnigmaMachine();
+        em.addToPlugboardSettingsMap("A", "Q");
+        em.addToPlugboardSettingsMap("B", "S");
+        em.addToPlugboardSettingsMap("C", "G");
+        em.addToPlugboardSettingsMap("D", "T");
+        em.addToPlugboardSettingsMap("E", "J");
+        em.addToPlugboardSettingsMap("K", "W");
+        em.addToPlugboardSettingsMap("M", "N");
+        em.addToPlugboardSettingsMap("O", "P");
+        em.addToPlugboardSettingsMap("R", "Y");
+        em.addToPlugboardSettingsMap("X", "U");
+
+        em.getRotorsInUse().add(em.getRotorI());
+        em.getRotorsInUse().add(em.getRotorII());
+        em.getRotorsInUse().add(em.getRotorV());
+
+        em.setInitialRotorPosition(0, 0);
+        em.setInitialRotorPosition(0, 1);
+        em.setInitialRotorPosition(0, 2);
+
+        em.setReflector(em.getReflectorB());
+
+        assertEquals("TACOYEPUJV", em.typeMessage("HELLOWORLD"));
+    }
+
+    @Test
+    public void testEnigmaPlugboardAndRotorOneFourFiveAndReflectorBHelloWorldEncryption() {
+
+        EnigmaMachine em = new EnigmaMachine();
+        em.addToPlugboardSettingsMap("A", "Q");
+        em.addToPlugboardSettingsMap("B", "S");
+        em.addToPlugboardSettingsMap("C", "G");
+        em.addToPlugboardSettingsMap("D", "T");
+        em.addToPlugboardSettingsMap("E", "J");
+        em.addToPlugboardSettingsMap("K", "W");
+        em.addToPlugboardSettingsMap("M", "N");
+        em.addToPlugboardSettingsMap("O", "P");
+        em.addToPlugboardSettingsMap("R", "Y");
+        em.addToPlugboardSettingsMap("X", "U");
+
+        em.getRotorsInUse().add(em.getRotorI());
+        em.getRotorsInUse().add(em.getRotorIV());
+        em.getRotorsInUse().add(em.getRotorV());
+
+        em.setInitialRotorPosition(0, 0);
+        em.setInitialRotorPosition(0, 1);
+        em.setInitialRotorPosition(0, 2);
+
+        em.setReflector(em.getReflectorB());
+
+        assertEquals("VMCSVADZIF", em.typeMessage("HELLOWORLD"));
+    }
+
 }

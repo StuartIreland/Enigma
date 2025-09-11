@@ -16,6 +16,8 @@ public class EnigmaMachine {
     final private Rotor rotorI = RotorFactory.createRotorI();
     final private Rotor rotorII = RotorFactory.createRotorII();
     final private Rotor rotorIII = RotorFactory.createRotorIII();
+    final private Rotor rotorIV = RotorFactory.createRotorIV();
+    final private Rotor rotorV = RotorFactory.createRotorV();
     final private Rotor reflectorA = RotorFactory.createReflectorA();
     final private Rotor reflectorB = RotorFactory.createReflectorB();
     final private Rotor reflectorC = RotorFactory.createReflectorC();
@@ -220,6 +222,14 @@ public class EnigmaMachine {
 
     public Rotor getRotorIII() {
         return rotorIII;
+    }
+
+    public Rotor getRotorIV() {
+        return rotorIV;
+    }
+
+    public Rotor getRotorV() {
+        return rotorV;
     }
 
     public Rotor getReflectorA() {

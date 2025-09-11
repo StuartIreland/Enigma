@@ -48,10 +48,10 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             while (true) {
                 System.out.println();
-                System.out.print("Which rotor do you want to put in slot " + (i + 1) + "? (1-3): ");
+                System.out.print("Which rotor do you want to put in slot " + (i + 1) + "? (1-5): ");
                 rotorInput = scanner.nextLine().trim();
-                if (!rotorInput.matches("[1-3]")) {
-                    System.out.println("Invalid input. Please enter a single number from 1 to 3.");
+                if (!rotorInput.matches("[1-5]")) {
+                    System.out.println("Invalid input. Please enter a single number from 1 to 5.");
                     continue;
                 }
 
@@ -68,8 +68,8 @@ public class Main {
                     case 1 -> RotorFactory.createRotorI();
                     case 2 -> RotorFactory.createRotorII();
                     case 3 -> RotorFactory.createRotorIII();
-                    //case 4 -> RotorFactory.createRotorIV(); // Make sure this exists
-                    //case 5 -> RotorFactory.createRotorV();  // Make sure this exists
+                    case 4 -> RotorFactory.createRotorIV();
+                    case 5 -> RotorFactory.createRotorV();
                     default -> throw new IllegalStateException("Unexpected rotor number: " + rotorNumber);
                 };
                 em.getRotorsInUse().add(selectedRotor);
