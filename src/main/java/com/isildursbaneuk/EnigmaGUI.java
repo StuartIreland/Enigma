@@ -5,14 +5,8 @@ import java.awt.*;
 
 public class EnigmaGUI {
 
-    private EnigmaMachine em;
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new EnigmaGUI().createAndShowGUI());
-    }
-
-    private void createAndShowGUI() {
-        initEnigma();
+    public static void createAndShowGUI(EnigmaMachine em) {
+        initEnigma(em);
 
         JFrame frame = new JFrame("Enigma Machine");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,9 +35,7 @@ public class EnigmaGUI {
         frame.setVisible(true);
     }
 
-    private void initEnigma() {
-        em = new EnigmaMachine();
-
+    private static void initEnigma(EnigmaMachine em) {
         em.getRotorsInUse().add(em.getRotorI());
         em.getRotorsInUse().add(em.getRotorII());
         em.getRotorsInUse().add(em.getRotorIII());
@@ -54,4 +46,5 @@ public class EnigmaGUI {
 
         em.setReflector(em.getReflectorB());
     }
+
 }
