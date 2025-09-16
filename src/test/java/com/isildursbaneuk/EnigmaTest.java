@@ -880,4 +880,57 @@ public class EnigmaTest {
         assertEquals("VMCSVADZIF", em.typeMessage("HELLOWORLD"));
     }
 
+    @Test
+    public void testSimpleHelloWorld() {
+
+        EnigmaMachine em = new EnigmaMachine();
+
+        em.getRotorsInUse().add(em.getRotorI());
+        em.getRotorsInUse().add(em.getRotorII());
+        em.getRotorsInUse().add(em.getRotorIII());
+
+        em.setInitialRotorPosition(0, 0);
+        em.setInitialRotorPosition(0, 1);
+        em.setInitialRotorPosition(0, 2);
+
+        em.setReflector(em.getReflectorB());
+
+        assertEquals("ILBDAAMTAZ", em.typeMessage("HELLOWORLD"));
+    }
+
+    @Test
+    public void testSimpleHelloWorldWithWhitespace() {
+
+        EnigmaMachine em = new EnigmaMachine();
+
+        em.getRotorsInUse().add(em.getRotorI());
+        em.getRotorsInUse().add(em.getRotorII());
+        em.getRotorsInUse().add(em.getRotorIII());
+
+        em.setInitialRotorPosition(0, 0);
+        em.setInitialRotorPosition(0, 1);
+        em.setInitialRotorPosition(0, 2);
+
+        em.setReflector(em.getReflectorB());
+
+        assertEquals("ILBDAAMTAZ", em.typeMessage("HELLO WORLD"));
+    }
+
+    @Test
+    public void testSimpleHelloWorldWithNonAlphaCharacters() {
+
+        EnigmaMachine em = new EnigmaMachine();
+
+        em.getRotorsInUse().add(em.getRotorI());
+        em.getRotorsInUse().add(em.getRotorII());
+        em.getRotorsInUse().add(em.getRotorIII());
+
+        em.setInitialRotorPosition(0, 0);
+        em.setInitialRotorPosition(0, 1);
+        em.setInitialRotorPosition(0, 2);
+
+        em.setReflector(em.getReflectorB());
+
+        assertEquals("ILBDAAMTAZ", em.typeMessage("HELLO 2 %^ ( WORLD"));
+    }
 }
