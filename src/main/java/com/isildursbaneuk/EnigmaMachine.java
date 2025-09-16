@@ -52,14 +52,16 @@ public class EnigmaMachine {
 
         List<String> encryptedMessageCharacters = new ArrayList<>();
 
+        String cleanMessage = messageToEncrypt.replaceAll("[^A-Za-z]", "");
+
         // Take the messageToEncrypt,
         // pass each letter to the keyboard pressKey method and
         // run it past the plugboard and
         // pass each result to the display displayKey method
-        for (int i = 0; i < messageToEncrypt.length(); i++) {
+        for (int i = 0; i < cleanMessage.length(); i++) {
 
             // Get the first letter of the string we have to encrypt
-            String nextLetter = String.valueOf(messageToEncrypt.charAt(i));
+            String nextLetter = String.valueOf(cleanMessage.charAt(i));
 
             // Run that letter through the plugboard
             if (plugboardSettingsMap.containsKey(nextLetter)) {
